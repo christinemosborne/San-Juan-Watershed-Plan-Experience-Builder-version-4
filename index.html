@@ -1,0 +1,441 @@
+:root {
+  --bg-main: #f7f3ee;
+  --panel-bg: #ffffff;
+  --accent: #d97338;
+  --accent-soft: #fbe3cf;
+  --accent-dark: #9a4c1f;
+  --primary: #1a6f8f;
+  --primary-soft: #e1f0f5;
+  --text-main: #123047;
+  --text-muted: #5f6b7a;
+  --border-subtle: #e0d6cc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+}
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+
+.header {
+  background: linear-gradient(90deg, #f8f4ef, #e7f1f5);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.header-title {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.header-eyebrow {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.header-main {
+  font-size: 20px;
+  font-weight: 650;
+}
+
+.header-sub {
+  font-size: 13px;
+  color: var(--text-muted);
+  max-width: 640px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.header-pill {
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 12px;
+  border: 1px solid var(--border-subtle);
+  background-color: #fff;
+  color: var(--text-muted);
+}
+
+/* Main layout */
+
+.main {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1.35fr) 360px;
+  gap: 16px;
+  padding: 16px 24px 24px;
+}
+
+.panel {
+  background-color: var(--panel-bg);
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Left navigation with larger buttons */
+
+.nav-panel {
+  padding: 16px 14px 18px;
+  gap: 10px;
+}
+
+.nav-header {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.nav-subtitle {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 12px;
+  border-radius: 12px;
+  border: 1px solid #d7e4ea;
+  background-color: var(--primary-soft);
+  cursor: pointer;
+  transition: background-color 0.18s ease, box-shadow 0.18s ease,
+    transform 0.05s ease;
+}
+
+.nav-item.secondary {
+  background-color: #f8fafc;
+  border-color: var(--border-subtle);
+}
+
+.nav-item:hover {
+  background-color: #d6e8f1;
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.08);
+  transform: translateY(-1px);
+}
+
+.nav-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: var(--primary);
+}
+
+.nav-text-main {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.nav-text-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.nav-cta {
+  margin-top: auto;
+  padding-top: 6px;
+}
+
+.nav-cta button {
+  width: 100%;
+  padding: 11px 14px;
+  border-radius: 999px;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  background: var(--primary);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.25);
+  transition: background 0.18s ease, transform 0.05s ease,
+    box-shadow 0.18s ease;
+}
+
+.nav-cta button:hover {
+  background: #14526a;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.32);
+}
+
+/* Map area */
+
+.map-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.map-toolbar {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.map-toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.map-toolbar-badge {
+  padding: 3px 8px;
+  border-radius: 999px;
+  background-color: #f3f4ff;
+  color: #4b5563;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 11px;
+}
+
+.map-container {
+  position: relative;
+  flex: 1;
+  min-height: 360px;
+  background: linear-gradient(180deg, #b9dae9, #77afc8);
+  overflow: hidden;
+}
+
+.map-placeholder {
+  position: absolute;
+  inset: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.12) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.12) 50%,
+    rgba(255, 255, 255, 0.12) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 26px 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0f172a;
+  font-size: 14px;
+  text-shadow: 0 1px 3px rgba(15, 23, 42, 0.3);
+}
+
+.map-controls {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.map-control-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 3px 8px rgba(15, 23, 42, 0.25);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  color: #111827;
+}
+
+/* Right panel: Share Your Input */
+
+.share-panel {
+  padding: 16px 18px;
+  background: radial-gradient(circle at top left, var(--accent-soft), #fff);
+  border-left: 4px solid var(--accent);
+}
+
+.share-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--accent-dark);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.share-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--accent-dark);
+}
+
+.share-sub {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.share-highlight {
+  font-size: 12px;
+  background-color: #fff7ed;
+  border-radius: 8px;
+  padding: 8px 9px;
+  border: 1px solid #fed7aa;
+  color: #92400e;
+  margin-bottom: 10px;
+}
+
+.share-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.share-form label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.share-form textarea,
+.share-form input {
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  padding: 8px 9px;
+  font-size: 13px;
+  font-family: inherit;
+  outline: none;
+  resize: vertical;
+  min-height: 72px;
+}
+
+.share-form textarea:focus,
+.share-form input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px rgba(217, 115, 56, 0.5);
+}
+
+.share-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 4px;
+  flex-wrap: wrap;
+}
+
+.share-button-main {
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, var(--accent), #ed8936);
+  color: #fff7ed;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 10px 26px rgba(148, 64, 12, 0.35);
+  transition: transform 0.05s ease, box-shadow 0.18s ease, filter 0.18s ease;
+  white-space: nowrap;
+}
+
+.share-button-main:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 32px rgba(124, 45, 18, 0.45);
+}
+
+.share-note {
+  font-size: 11px;
+  color: var(--text-muted);
+  max-width: 200px;
+}
+
+/* Footer */
+
+.footer {
+  padding: 8px 24px 16px;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* Basic responsiveness */
+
+@media (max-width: 1100px) {
+  .main {
+    grid-template-columns: 280px minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "nav share"
+      "map map";
+  }
+
+  .nav-panel {
+    grid-area: nav;
+  }
+
+  .map-panel {
+    grid-area: map;
+    margin-top: 8px;
+  }
+
+  .share-panel {
+    grid-area: share;
+  }
+}
+
+@media (max-width: 800px) {
+  .main {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "share"
+      "map"
+      "nav";
+  }
+}
